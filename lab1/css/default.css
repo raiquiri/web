@@ -1,0 +1,100 @@
+/* Сброс стилей */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Manrope, sans-serif;
+    outline: non;
+}
+
+html {
+    box-sizing: border-box;
+    /* position: relative;
+    overflow-x: hidden; */
+}
+
+*, *::before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background: #040C18;
+    padding: 0 2rem;
+    font-family: Manrope, sans-serif;
+    color: #ffffff;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+img, svg {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a, button {
+    color: inherit;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+a:hover, button:hover {
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+ul li {
+    list-style-type: none;
+}
+  
+h1 {
+    font-size: 60px;
+    color: #ae67fa;
+}
+  
+h2 {
+    font-size: 34px;
+}
+
+h1,
+h2 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 24px;
+}
+
+p {
+  font-size: 20px;
+  color: #fff;
+}
+
