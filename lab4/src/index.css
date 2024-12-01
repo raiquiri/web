@@ -1,0 +1,1102 @@
+/* Подключение шрифтов */
+@font-face {
+  font-family: "ManropeBold";
+  src: url(./fonts/Manrope-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(./fonts/Manrope-Regular.ttf);
+}
+
+@font-face {
+  font-family: "ManropeLight";
+  src: url(./fonts/Manrope-Light.ttf);
+}
+
+/* Сброс базовых стилей */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  outline: none;
+}
+
+/* Общие стили для всего приложения */
+
+body {
+  background: #031b34;
+  padding: 0 2rem;
+  overflow: auto;
+}
+
+body.oh {
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a,
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+a:hover,
+button:hover {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+button:hover {
+  background-color: #ae67fa;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 60px;
+  color: #ae67fa;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h1,
+h2 {
+  font-family: "ManropeBold", sans-serif;
+  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  font-family: "ManropeBold", sans-serif;
+  color: #fff;
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+  color: #fff;
+}
+
+.btn {
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.primary-btn {
+  background-color: #ff4820;
+}
+
+.section {
+  max-width: 1169px;
+  width: 100%;
+}
+
+.lined_header {
+  background: url("./assets/img/gradient_line.svg") no-repeat 0 0 transparent;
+  padding: 1rem 0;
+}
+
+/* Стили для Шапки */
+
+.header {
+  display: flex;
+  max-width: 1169px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 0;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background: #031b34;
+  z-index: 9999;
+}
+
+.header .header__logo .logo__link {
+  display: flex;
+  align-items: center;
+}
+
+.header .header__menu .menu {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.header .header__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 2rem;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.header .header__right.hidden {
+  opacity: 0;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  visibility: hidden;
+}
+
+.header .header__right .menu__close {
+  width: 38px;
+  height: 38px;
+}
+
+.header .header__right .menu__close.hidden {
+  display: none;
+}
+
+.header .header__menu .menu .menu__item a {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+.header .header__menu .menu .menu__item:hover a {
+  border-bottom-color: #fff;
+}
+
+.header .header__menu .menu .menu__item.active a {
+  color: #f49867;
+  border-bottom-color: #f49867;
+}
+
+.header .header__burger_menu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  cursor: pointer;
+}
+
+.header .header__burger_menu.hidden {
+  display: none;
+}
+
+.header .header__burger_menu .burger_menu__line,
+.header .header__right .menu__close .menu__line {
+  width: 43px;
+  height: 5px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.header .header__right .menu__close .menu__line:nth-child(1) {
+  position: relative;
+  top: 15px;
+  right: 4px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.header .header__right .menu__close .menu__line:nth-child(2) {
+  position: relative;
+  top: 10px;
+  right: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+.header .cta_buttons {
+  display: flex;
+  column-gap: 1rem;
+}
+
+/* Стили для первого экрана (Хиро секция) */
+
+.hero_section {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+  /* min-height: 60vh; */
+  margin: 7rem 0 3rem;
+}
+
+.hero_section .hero_section__left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 3rem;
+  width: 75%;
+}
+
+.hero_section .hero_section__left .left__description {
+  color: #81afdd;
+}
+
+.hero_section .hero_section__left .left__cta_buttons {
+  display: flex;
+  width: 100%;
+}
+
+.hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+  min-width: 250px;
+  width: 70%;
+  padding: 8px 32px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #052d56;
+  border-bottom: none;
+  background-color: #052d56;
+}
+
+.hero_section .hero_section__left .left__cta_buttons .btn {
+  border-radius: 0 4px 4px 0;
+}
+
+.hero_section .hero_section__right {
+  height: 100%;
+}
+
+.hero_section .hero_section__right img {
+  width: 100%;
+}
+
+/* Секция брендов */
+
+.brands_section {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 6rem 0;
+  column-gap: 3rem;
+}
+
+/* Что такое Chat GPT */
+
+.what_is_chatgpt_section {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  margin: 6rem 0;
+  row-gap: 7rem;
+  background: url(./assets/img/what_is_gpt_3_bg.svg) no-repeat 0 0 / cover;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top {
+  display: flex;
+  column-gap: 3rem;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__header {
+  flex: 30%;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__content {
+  flex: 65%;
+  color: #81afdd;
+  font-size: 14px;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+  width: 500px;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a {
+  color: #ff8a71;
+  font-size: 16px;
+  border-bottom: 1px solid transparent;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a:hover {
+  border-bottom: 1px solid #ff8a71;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  column-gap: 2rem;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.what_is_chatgpt_section
+  .what_is_chatgpt_section__bottom
+  .bottom__container
+  .container__content {
+  color: #81afdd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Будущее наступило */
+
+.future_here {
+  display: flex;
+  column-gap: 6rem;
+  margin: 6rem 0 2rem;
+}
+
+.future_here .future_here__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 2rem;
+  flex: 2;
+}
+
+.future_here .future_here__left .left__cta {
+  color: #f49867;
+  border-bottom: 1px solid transparent;
+}
+
+.future_here .future_here__left a:hover {
+  border-bottom: 1px solid #f49867;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.future_here .future_here__right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.future_here .future_here__right .right__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.future_here .future_here__right .right__container .container__header {
+  width: 35%;
+}
+
+.future_here .future_here__right .right__container .container__content {
+  width: 55%;
+  color: #81afdd;
+}
+
+/* Секция с девушкой */
+.woman_section {
+  display: flex;
+  margin-top: 3rem;
+  align-items: flex-start;
+  column-gap: 3rem;
+}
+
+.woman_section .woman__img {
+  margin-left: 2rem;
+  width: 45%;
+  height: auto;
+}
+
+.woman_section .woman__discription {
+  margin: auto;
+}
+
+.woman_section .woman__discription .upper__start_up,
+.woman_section .woman__discription .lower__start_up {
+  font-weight: 500;
+}
+
+.woman_section .woman__discription .upper__start_up {
+  color: #71E5FF;
+}
+
+.woman_section .woman__discription .lower__start_up {
+  color: #FF8A71;
+  margin-top: 2rem;
+}
+
+.woman_section .woman__discription .woman__header {
+  width: 70%;
+}
+
+.woman_section .woman__discription .woman__content {
+  color: #81AFDD;
+  width: 90%;
+}
+
+/* Секция с предложением */
+.offer_section {
+  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+  border: none;
+  padding: 2rem 1rem 2rem;
+  border-radius: 15px;
+  /* background: url(../img/gradient_table.svg) no-repeat;  */
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.offer_section .offer__discription {
+  margin-left: 1rem;
+}
+.offer_section .offer__discription .offer__header {
+  font-weight: 500;
+  color: #000000;
+}
+
+.offer_section .offer__discription .offer__content {
+  font-weight: 800;
+  margin-top: 1rem;
+  width: 70%;
+  color: #000000;
+}
+
+.offer_section a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3rem;
+}
+
+.offer_section .start_button {
+  font-size: 18px;
+  font-weight: 700;
+  background: #000000;
+  border: none;
+  padding: 1rem 4rem 1rem 4rem;
+  border-radius: 30px;
+}
+
+.offer_section .start_button:hover {
+  background-color: #ae67fa;
+}
+
+/* Секция со статьями */
+.blog_section .blog__header {
+  margin-top: 5rem;
+  
+}
+
+.blog_section .blog__discription {
+  display: flex;
+}
+
+.blog_section .blog__discription .second__column, 
+.blog_section .blog__discription .third__column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  margin-left: 2rem;
+}
+
+.blog_section .blog__discription .first__column,
+.blog_section .blog__discription .second__column, 
+.blog_section .blog__discription .third__column {
+  width: 100%;
+}
+
+.blog_section .blog__discription .first__column img,
+.blog_section .blog__discription .second__column img, 
+.blog_section .blog__discription .third__column img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.blog_section .blog__discription .first__column .article__date {
+  font-weight: 300;
+  margin: 2rem 0 0 1rem
+}
+
+.blog_section .blog__discription .first__column .article__header {
+  font-weight: 800;
+  margin: 1rem;
+}
+
+.blog_section .blog__discription .first__column .article__offer {
+  font-weight: 300;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.blog_section .blog__discription .second__column .article__date, 
+.blog_section .blog__discription .third__column .article__date {
+  font-weight: 300;
+  margin: 1rem;
+}
+
+.blog_section .blog__discription .second__column .article__header, 
+.blog_section .blog__discription .third__column .article__header {
+  font-weight: 800;
+  margin: 1rem;
+}
+
+.blog_section .blog__discription .second__column .article__offer, 
+.blog_section .blog__discription .third__column .article__offer {
+  font-weight: 300;
+  margin: 2rem 0 1rem 1rem;
+}
+
+.blog_section .blog__discription .first__column,
+.blog_section .blog__discription .second__column .second__article, 
+.blog_section .blog__discription .second__column .third__article, 
+.blog_section .blog__discription .third__column .fourth__article,
+.blog_section .blog__discription .third__column .fifth__article {
+  position: relative;
+  z-index: 1; 
+}
+
+.blog_section .blog__discription .first__column::before,
+.blog_section .blog__discription .second__column .second__article::before, 
+.blog_section .blog__discription .second__column .third__article::before, 
+.blog_section .blog__discription .third__column .fourth__article::before,
+.blog_section .blog__discription .third__column .fifth__article::before {
+  content: ""; /* Псевдоэлемент должен существовать */
+  position: absolute; /* Позиционирование относительно родителя */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  background: #042C54; /* Задний фон */
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
+  z-index: -1;
+}
+
+/* Секция с контактами */
+
+.farewell_section{
+  margin: 0 auto; /* Центрирование на странице */
+  position: relative;
+  margin-top: 5rem;
+}
+
+.farewell_section .farewell__header .header__discription {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  text-align: center;
+
+}
+.farewell_section .farewell__header a {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.farewell_section .farewell__header .accsess_button {
+  font-weight: 500;
+  padding: 1rem 4rem 1rem 4rem;
+  border: 1px solid #ffffff;
+  text-align: center;
+}
+
+.farewell_section .farewell__contacts {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  display: flex;
+  column-gap: 9rem;
+
+}
+
+.farewell_section .farewell__contacts .gpt_3__block {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;  
+}
+
+.farewell_section .farewell__contacts .gpt_3__block img {
+  margin-bottom: 1rem;
+}
+
+.farewell_section .farewell__contacts p {
+  width: 50%;
+  font-weight: 300;
+}
+
+.farewell_section .farewell__contacts .link__block h3,
+.farewell_section .farewell__contacts .company__block h3,
+.farewell_section .farewell__contacts .contacts__block h3 {
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.farewell_section .farewell__contacts .menu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.farewell_section .farewell__contacts .item__link {
+  font-weight: 200;
+}
+
+.law_section .law__block {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+  margin: 1rem 0 1rem 0;
+}
+
+/* Медиа запросы для адаптива */
+/* Для телефонов и небольших планешетов*/
+@media screen and (max-width: 767px) {
+  a {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  .page {
+    align-content: center;
+  }
+  /* Заголовок */
+  .header {
+    padding: 2rem;
+  }
+
+  .header .header__logo .logo__link img {
+    width: 200%;
+  }
+
+  .header .header__right {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+    margin-top: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 55vh;
+    z-index: 9999;
+    background: #031b34;
+  }
+
+  .header .header__menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  .header .header__menu .menu {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  .header .header__menu .menu .menu__item a {
+    font-size: 24px;
+  }
+
+  /* Секция с типом */
+
+  .hero_section {
+    margin-top: 7rem;
+    flex-direction: column;
+  }
+  
+  .hero_section .hero_section__left {
+    width: 100%;
+  }
+
+
+  .hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+    min-width: 0px;
+    width: 80%;
+    padding: 4px 16px;
+  }
+
+  .hero_section .hero_section__left .left__cta_buttons button {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    font-size: 13px;
+  }
+
+  .hero_section .hero_section__right {
+    display: flex;
+    justify-content: center;
+  }
+  .hero_section .hero_section__right img {
+    max-width: 70%;
+  }
+
+  /* Бренды можно не трогать и так нормик */
+
+  /* Секция с табличкой */
+  .what_is_chatgpt_section {
+    padding: 24px;
+    margin-top: 3rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__top {
+    flex-direction: column;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+    width: auto;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  /* Секция про будущее */
+  
+  .future_here {
+    flex-direction: column;
+    row-gap: 2rem;
+    margin: 0 0 2rem
+  }
+
+  .future_here .future_here__right .right__container {
+    flex-direction: column;
+    width: auto;
+  }
+  .future_here .future_here__right .right__container .container__header {
+    width: auto;
+  }
+  .future_here .future_here__right .right__container .container__content {
+    width: auto;
+  }
+
+  /* Секция с девушкой */
+
+  .woman_section {
+    flex-direction: column;
+  }
+
+  .woman_section .woman__img {
+    margin-left: 0;
+    width: 70%;
+    margin: auto;
+  }
+  .woman_section .woman__img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .woman_section .woman__discription {
+    margin-top: 2rem;
+  }
+
+  .woman_section .woman__discription .woman__header {
+    width: auto;
+  }
+
+  .woman_section .woman__discription .woman__content {
+    width: auto;
+  }
+
+  /* Секция с предложение */
+
+  .offer_section {
+    flex-direction: column;
+  }
+
+  .offer_section .offer__discription .offer__content {
+    width: auto;
+    font-size: 19px;
+  }
+
+  .offer_section a {
+    margin: 1rem auto;
+  }
+
+  /* Секция со статьями */
+
+  .blog_section .blog__discription {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .blog_section .blog__discription .second__column,
+  .blog_section .blog__discription .third__column {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+
+  .blog_section .blog__discription .first__column .article__offer {
+    position: static;
+    margin: 2rem 0 1rem 1rem;
+  }
+
+  /* Секция с контактами */
+
+  .farewell_section .farewell__contacts {
+    margin-top: 5rem;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  .farewell_section .farewell__contacts .menu {
+    row-gap: 1rem;
+  }
+
+  .farewell_section .farewell__contacts .link__block h3,
+  .farewell_section .farewell__contacts .company__block h3,
+  .farewell_section .farewell__contacts .contacts__block h3 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .farewell_section .farewell__contacts p {
+    width: auto;
+    font-weight: 300;
+  }
+}
+
+/* Для планшетов */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  a {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  /* Заголовок */
+
+  .header {
+    padding: 2rem;
+  }
+
+  .header .header__logo .logo__link img {
+    width: 200%;
+  }
+
+  .header .header__right {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+    margin-top: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 55vh;
+    z-index: 9999;
+    background: #031b34;
+  }
+
+  .header .header__menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    row-gap: 2rem;
+  }
+
+  .header .header__menu .menu {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  .header .header__menu .menu .menu__item a {
+    font-size: 24px;
+  }
+
+  /* Секция с типом */
+
+  .hero_section {
+    margin-top: 7rem;
+  }
+
+  /* Секция с табличкой */
+  .what_is_chatgpt_section {
+    padding: 30px;
+    margin-top: 3rem;
+  }
+  
+  /* Секция с будущем*/
+
+  .future_here {
+    column-gap: 3rem;
+  }
+
+  /* Секция с девушкой */
+
+  .woman_section .woman__img {
+    margin-left: 0;
+    width: 70%;
+    margin: auto;
+  }
+  .woman_section .woman__img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .woman_section .woman__discription {
+    width: 50%;
+  }
+
+  /* Секция с контактами */
+  .farewell_section .farewell__contacts {
+    column-gap: 4rem;
+  }
+}
+
+/* Для лаптопов */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  a {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  /* Секция с девушкой */
+
+  .woman_section {
+    column-gap: 7rem;
+  }
+
+  .woman_section .woman__img {
+    margin-left: 0;
+  }
+}
+
+/* Для 2к - 4к */
+@media screen and (min-width: 2560px) and (max-width: 3860px) {
+  a {
+  font-size: 22px;
+  }
+
+  h1 {
+    font-size: 72px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  input, .btn {
+    font-size: 20px;
+  }
+
+  .section {
+    max-width: 1640px;
+  }
+
+}
